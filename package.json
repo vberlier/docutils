@@ -21,7 +21,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "postversion": "git push --follow-tags"
   },
   "devDependencies": {
     "eslint": "^5.15.1",
