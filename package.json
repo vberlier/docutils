@@ -1,6 +1,6 @@
 {
   "name": "docutils-parser",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple javascript parser for docutils xml documents",
   "author": "Valentin Berlier <berlier.v@gmail.com>",
   "license": "MIT",
