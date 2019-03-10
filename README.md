@@ -1,5 +1,8 @@
 # docutils-parser
 
+[![Build Status](https://travis-ci.com/vberlier/docutils-parser.svg?branch=master)](https://travis-ci.com/vberlier/docutils-parser)
+![npm](https://img.shields.io/npm/v/docutils-parser.svg)
+
 > Simple javascript parser for docutils xml documents.
 
 This package turns [docutils xml documents](http://docutils.sourceforge.net/docs/ref/doctree.html) into digestible javascript objects.
