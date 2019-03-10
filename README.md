@@ -14,13 +14,13 @@ const document = docutils.parseDocument(`
           <paragraph>This file is empty.</paragraph>
       </section>
   </document>
-`)
+`);
 
-console.log(document.attributes.source)
+console.log(document.attributes.source);
 // Output: '.../hello.rst'
 
-const section = document.children[0]
-console.log(section.children[0])
+const section = document.children[0];
+console.log(section.children[0]);
 // Output: { tag: 'title', attributes: {}, children: [ 'Hello, world!' ] }
 ```
 
