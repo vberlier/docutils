@@ -1,0 +1,25 @@
+{
+  "name": "docutils-parser",
+  "version": "0.1.0",
+  "description": "Simple javascript parser for docutils xml documents",
+  "author": "Valentin Berlier <berlier.v@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "docutils",
+    "reStructuredText",
+    "xml",
+    "parser"
+  ],
+  "homepage": "https://github.com/vberlier/docutils-parser#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vberlier/docutils-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vberlier/docutils-parser/issues"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
