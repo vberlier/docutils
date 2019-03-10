@@ -32,5 +32,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.3.1",
     "jest-raw-loader": "^1.0.1"
+  },
+  "dependencies": {
+    "libxmljs": "^0.19.5"
   }
 }
