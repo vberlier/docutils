@@ -19,8 +19,8 @@ const document = docutils.parseDocument(`
   </document>
 `);
 
-console.log(document.attributes.source);
-// Output: '.../hello.rst'
+console.log(document.attributes);
+// Output: { source: '.../hello.rst' }
 
 const section = document.children[0];
 console.log(section.children[0]);
