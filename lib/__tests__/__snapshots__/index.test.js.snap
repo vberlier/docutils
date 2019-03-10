@@ -3,7 +3,7 @@
 exports[`converts a long document successfully 1`] = `
 Object {
   "attributes": Object {
-    "source": ".../docs/index.rst",
+    "source": ".../index.rst",
   },
   "children": Array [
     Object {
