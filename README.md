@@ -72,8 +72,6 @@ console.log(document.tag);
 Note that the `parse()` function will throw an error if the input string isn't valid xml.
 
 ```js
-const docutils = require('docutils-parser');
-
 try {
   docutils.parse('invalid document');
 } catch (err) {
@@ -81,6 +79,30 @@ try {
   // Error: Start tag expected, '<' not found
 }
 ```
+
+## Plugins
+
+The parser lets you hook into the resulting element tree by using plugins. Plugins are simply functions that take the parser instance as parameter. The `parse()` function lets you specify an array of plugins as a second argument.
+
+```js
+const uppercaseTitle = parser => {
+  parser.on('element:title', element => {
+    element.children[0] = element.children[0].toUpperCase();
+  });
+};
+
+const document = docutils.parse(xml, [uppercaseTitle]);
+console.log(document.children[0].children[0]);
+// Output: { tag: 'title', attributes: {}, children: [ 'HELLO, WORLD!' ] }
+```
+
+The parser is an instance of `docutils.DocumentParser` and inherits from the nodejs [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter). Here are the events emitted by the parser:
+
+Event              | Arguments   | Description
+------------------ | ----------- | ----------------------------------------------
+`document:start`   |             | Emitted before parsing the document
+`document:end`     | `document`  | Emitted after parsing the document
+`element:TAG_NAME` | `element`   | Emitted after parsing a `TAG_NAME` element
 
 ## Contributing
 
