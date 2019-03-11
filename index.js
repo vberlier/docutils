@@ -107,9 +107,9 @@ class DocumentParser extends EventEmitter {
   }
 }
 
-function parseDocument (string) {
-  const parser = new DocumentParser()
+function parse (string, plugins = []) {
+  const parser = new DocumentParser({ plugins })
   return parser.parse(string)
 }
 
-module.exports = { DocumentParser, parseDocument, emptyNode }
+module.exports = { parse, DocumentParser }

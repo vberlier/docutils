@@ -4,7 +4,7 @@ const basicDoc = require('./documents/hello.xml')
 const longDoc = require('./documents/index.xml')
 
 test('converts a basic document successfully', () => {
-  const result = docutils.parseDocument(basicDoc)
+  const result = docutils.parse(basicDoc)
   expect(result).toEqual({
     tag: 'document',
     attributes: {
@@ -39,6 +39,6 @@ test('converts a basic document successfully', () => {
 })
 
 test('converts a long document successfully', () => {
-  const result = docutils.parseDocument(longDoc)
+  const result = docutils.parse(longDoc)
   expect(result).toMatchSnapshot()
 })

@@ -10,7 +10,7 @@ This package uses [libxmljs](https://github.com/libxmljs/libxmljs) to parse and 
 ```js
 const docutils = require('docutils-parser');
 
-const document = docutils.parseDocument(`
+const document = docutils.parse(`
   <document source=".../hello.rst">
       <section ids="hello-world" names="hello,\\ world!">
           <title>Hello, world!</title>
@@ -56,14 +56,14 @@ Elements in docutils documents are represented as plain javascript objects with 
 }
 ```
 
-The `parseDocument()` function takes a string and returns a hierarchy of elements that matches the content of the document. The element returned by the `parseDocument()` function is the root element of the document.
+The `parse()` function takes a string and returns a hierarchy of elements that matches the content of the document. The element returned by the `parse()` function is the root element of the document.
 
 ```js
 const fs = require('fs');
 const docutils = require('docutils-parser');
 
 const content = fs.readFileSync('hello.xml', { encoding: 'utf-8' });
-const document = docutils.parseDocument(content);
+const document = docutils.parse(content);
 
 console.log(document.tag);
 // Output: 'document'
