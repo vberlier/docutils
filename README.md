@@ -29,6 +29,8 @@ console.log(section.children[0]);
 
 ## Installation
 
+You can install `docutils-parser` with your `npm` client of choice.
+
 ```bash
 $ npm install docutils-parser
 ```
