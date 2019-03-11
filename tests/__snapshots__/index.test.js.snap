@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`converts a long document successfully 1`] = `
+exports[`parse() function long document 1`] = `
 Object {
   "attributes": Object {
     "source": ".../index.rst",
