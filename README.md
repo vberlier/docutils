@@ -69,6 +69,19 @@ console.log(document.tag);
 // Output: 'document'
 ```
 
+Note that the `parse()` function will throw an error if the input string isn't valid xml.
+
+```js
+const docutils = require('docutils-parser');
+
+try {
+  docutils.parse('invalid document');
+} catch (err) {
+  console.log(err);
+  // Error: Start tag expected, '<' not found
+}
+```
+
 ## Contributing
 
 Contributions are welcome. This project uses [jest](https://jestjs.io/) for testing.
