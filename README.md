@@ -67,13 +67,13 @@ console.log(document.tag);
 
 ## Contributing
 
-Contributions are welcome. This project uses [jest](https://jestjs.io/) for testing
+Contributions are welcome. This project uses [jest](https://jestjs.io/) for testing.
 
 ```bash
 $ npm test
 ```
 
-The source code follows the [javascript standard](https://standardjs.com/) style guide.
+The code follows the [javascript standard](https://standardjs.com/) style guide.
 
 ```bash
 $ npm run lint
