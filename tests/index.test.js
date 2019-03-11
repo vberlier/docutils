@@ -52,11 +52,68 @@ describe('parse() function', () => {
 describe('parser plugins', () => {
   test('execution order', () => {
     let count = 0
-    const first = () => count++
-    const second = () => expect(count++).toEqual(1)
+    const first = jest.fn(() => expect(count++).toEqual(0))
+    const second = jest.fn(() => expect(count++).toEqual(1))
 
     docutils.parse(basicDoc, [first, second])
 
-    expect(count).toEqual(2)
+    expect(first).toBeCalled()
+    expect(second).toBeCalled()
+  })
+
+  test('can use parser', () => {
+    const plugin = jest.fn(parser => {
+      expect(parser).toBeInstanceOf(docutils.DocumentParser)
+    })
+
+    docutils.parse(basicDoc, [plugin])
+
+    expect(plugin).toBeCalled()
+  })
+})
+
+describe('parser events', () => {
+  let parser
+
+  beforeEach(() => {
+    parser = new docutils.DocumentParser()
+  })
+
+  test('document:start', () => {
+    const callback = jest.fn(() => {
+      expect(parser.root.children.length).toEqual(0)
+    })
+
+    parser.on('document:start', callback).parse(basicDoc)
+
+    expect(callback).toBeCalled()
+  })
+
+  test('document:end', () => {
+    const callback = jest.fn(document => {
+      expect(document).toBe(parser.root.children[0])
+    })
+
+    parser.on('document:end', callback).parse(basicDoc)
+
+    expect(callback).toBeCalled()
+  })
+
+  test('element:not_present_in_document', () => {
+    const callback = jest.fn()
+
+    parser.on('element:not_present_in_document', callback).parse(basicDoc)
+
+    expect(callback).not.toBeCalled()
+  })
+
+  test('element:title', () => {
+    const callback = jest.fn(element => {
+      expect(element).toBe(parser.root.children[0].children[0].children[0])
+    })
+
+    parser.on('element:title', callback).parse(basicDoc)
+
+    expect(callback).toBeCalled()
   })
 })
