@@ -62,8 +62,8 @@ The `parse()` function takes a string and returns a hierarchy of elements that m
 const fs = require('fs');
 const docutils = require('docutils-parser');
 
-const content = fs.readFileSync('hello.xml', { encoding: 'utf-8' });
-const document = docutils.parse(content);
+const xml = fs.readFileSync('hello.xml', { encoding: 'utf-8' });
+const document = docutils.parse(xml);
 
 console.log(document.tag);
 // Output: 'document'
