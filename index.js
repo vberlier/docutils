@@ -26,6 +26,10 @@ class DocumentParser {
     for (const eventName of this.events) {
       this.sax.on(eventName, this[eventName].bind(this))
     }
+
+    this.sax.on('error', message => {
+      throw new Error(message)
+    })
   }
 
   parse (string) {
