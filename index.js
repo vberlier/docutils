@@ -1,3 +1,4 @@
+const EventEmitter = require('events')
 const libxmljs = require('libxmljs')
 
 function emptyNode (tag) {
@@ -8,8 +9,10 @@ function emptyNode (tag) {
   }
 }
 
-class DocumentParser {
+class DocumentParser extends EventEmitter {
   constructor () {
+    super()
+
     this.root = null
     this.stack = []
     this.preserveSpace = null
@@ -70,6 +73,8 @@ class DocumentParser {
     if (this.preserveSpace === element) {
       this.preserveSpace = null
     }
+
+    this.emit('element:' + element.tag, element)
   }
 
   characters (chars) {
