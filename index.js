@@ -10,8 +10,10 @@ function emptyNode (tag) {
 }
 
 class DocumentParser extends EventEmitter {
-  constructor () {
+  constructor ({ plugins = [] } = {}) {
     super()
+
+    this.plugins = plugins
 
     this.root = null
     this.stack = []
@@ -21,6 +23,7 @@ class DocumentParser extends EventEmitter {
 
     this.events = [
       'startDocument',
+      'endDocument',
       'startElementNS',
       'endElementNS',
       'characters'
@@ -33,6 +36,10 @@ class DocumentParser extends EventEmitter {
     this.sax.on('error', message => {
       throw new Error(message)
     })
+
+    for (const plugin of this.plugins) {
+      plugin(this)
+    }
   }
 
   parse (string) {
@@ -46,6 +53,12 @@ class DocumentParser extends EventEmitter {
     this.root = emptyNode('root')
     this.stack = [this.root]
     this.preserveSpace = null
+
+    this.emit('document:start')
+  }
+
+  endDocument () {
+    this.emit('document:end')
   }
 
   startElementNS (elem, attrs) {
