@@ -35,22 +35,22 @@ $ npm install docutils-parser
 
 ## Usage
 
-Docutils documents are trees of elements that are represented as plain javascript objects with a very simple structure.
+All the elements in a document are represented as plain javascript objects with a very simple structure. The `tag` property contains the name of the element. All of the attributes of the element are stored in the `attributes` property, which contains an object mapping attribute names to their associated values. Finally, the `children` property is an array that contains strings or other children elements.
 
 ```js
 {
-  tag: 'name',
+  tag: 'parent',
   attributes: {
     'key': 'value'
   },
   children: [
-    { /* element */ },
-    'text'
+    'some text',
+    { tag: 'child', attributes: {}, children: [] }
   ]
 }
 ```
 
-The `parseDocument()` function simply takes a string and returns a hierarchy of elements that matches the content of the document.
+The `parseDocument()` function takes a string and returns a hierarchy of elements that matches the content of the document. The element returned by the `parseDocument()` function is the root element of the document.
 
 ```js
 const fs = require('fs');
@@ -65,7 +65,17 @@ console.log(document.tag);
 
 ## Contributing
 
-Contributions are welcome. This project uses [eslint](https://eslint.org/) with [eslint-config-standard](https://github.com/standard/eslint-config-standard) and [jest](https://jestjs.io/) for testing. You can lint and test the project with `npm run lint` and `npm test` respectively.
+Contributions are welcome. This project uses [jest](https://jestjs.io/) for testing
+
+```bash
+$ npm test
+```
+
+The source code follows the [javascript standard](https://standardjs.com/) style guide.
+
+```bash
+$ npm run lint
+```
 
 ---
 
