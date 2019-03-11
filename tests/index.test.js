@@ -3,7 +3,7 @@ const docutils = require('../index')
 const basicDoc = require('./documents/hello.xml')
 const longDoc = require('./documents/index.xml')
 
-describe('parse() function', () => {
+describe('parser', () => {
   test('basic document', () => {
     const result = docutils.parse(basicDoc)
     expect(result).toEqual({
