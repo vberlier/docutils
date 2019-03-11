@@ -42,3 +42,7 @@ test('converts a long document successfully', () => {
   const result = docutils.parse(longDoc)
   expect(result).toMatchSnapshot()
 })
+
+test('throws error with invalid xml', () => {
+  expect(() => docutils.parse('invalid xml')).toThrow()
+})
