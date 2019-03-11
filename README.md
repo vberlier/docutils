@@ -37,7 +37,11 @@ $ npm install docutils-parser
 
 ## Usage
 
-All the elements in a document are represented as plain javascript objects with a very simple structure. The `tag` property contains the name of the element. All of the attributes of the element are stored in the `attributes` property, which contains an object mapping attribute names to their associated values. Finally, the `children` property is an array that contains strings or other children elements.
+Elements in docutils documents are represented as plain javascript objects with a very simple structure:
+
+- The `tag` property contains the name of the element
+- The `attributes` property contains an object mapping attribute names to their associated values
+- The `children` property is an array that can contain strings or other children elements
 
 ```js
 {
