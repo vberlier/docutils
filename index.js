@@ -58,7 +58,7 @@ class DocumentParser extends EventEmitter {
   }
 
   endDocument () {
-    this.emit('document:end')
+    this.emit('document:end', this.root.children[0])
   }
 
   startElementNS (elem, attrs) {
