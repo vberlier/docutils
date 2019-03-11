@@ -18,7 +18,6 @@ class DocumentParser {
 
     this.events = [
       'startDocument',
-      'endDocument',
       'startElementNS',
       'endElementNS',
       'characters'
@@ -40,9 +39,6 @@ class DocumentParser {
     this.root = emptyNode('root')
     this.stack = [this.root]
     this.preserveSpace = null
-  }
-
-  endDocument () {
   }
 
   startElementNS (elem, attrs) {
