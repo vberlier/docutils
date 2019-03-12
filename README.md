@@ -1,7 +1,7 @@
 # docutils-parser
 
 [![Build Status](https://travis-ci.com/vberlier/docutils-parser.svg?branch=master)](https://travis-ci.com/vberlier/docutils-parser)
-![npm](https://img.shields.io/npm/v/docutils-parser.svg)
+[![npm](https://img.shields.io/npm/v/docutils-parser.svg)](https://www.npmjs.com/package/docutils-parser)
 
 > Simple javascript parser for docutils xml documents.
 
