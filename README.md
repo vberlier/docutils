@@ -12,18 +12,13 @@ const docutils = require('docutils-parser');
 
 const document = docutils.parse(`
   <document source=".../hello.rst">
-      <section ids="hello-world" names="hello,\\ world!">
-          <title>Hello, world!</title>
-          <paragraph>This file is empty.</paragraph>
-      </section>
+    <section ids="hello-world" names="hello,\\ world!">
+      <title>Hello, world!</title>
+    </section>
   </document>
 `);
 
-console.log(document.attributes);
-// Output: { source: '.../hello.rst' }
-
-const section = document.children[0];
-console.log(section.children[0]);
+console.log(document.children[0].children[0]);
 // Output: { tag: 'title', attributes: {}, children: [ 'Hello, world!' ] }
 ```
 
@@ -37,39 +32,46 @@ $ npm install docutils-parser
 
 ## Usage
 
-Elements in docutils documents are represented as plain javascript objects with a very simple structure:
+### docutils.parse(string, plugins = [])
 
-- The `tag` property contains the name of the element
-- The `attributes` property contains an object mapping attribute names to their associated values
-- The `children` property is an array that can contain strings or other children elements
+Parse the input string and return a hierarchy of plain javascript objects. The function will throw an error if the input string isn't valid xml.
+
+Let's take a look at what the function returned in the previous example.
 
 ```js
 {
-  tag: 'parent',
+  tag: 'document',
   attributes: {
-    'key': 'value'
+    source: '.../hello.rst'
   },
   children: [
-    'some text',
-    { tag: 'child', attributes: {}, children: [] }
+    {
+      tag: 'section',
+      attributes: {
+        ids: 'hello-world',
+        names: 'hello,\\ world!'
+      },
+      children: [
+        {
+          tag: 'title',
+          attributes: {},
+          children: [
+            'Hello, world!'
+          ]
+        }
+      ]
+    }
   ]
 }
 ```
 
-The `parse()` function takes a string and returns a hierarchy of elements that matches the content of the document. The element returned by the `parse()` function is the root element of the document.
+As you can see, each element is represented as a plain javascript object with a specific structure:
 
-```js
-const fs = require('fs');
-const docutils = require('docutils-parser');
+- The `tag` property is the name of the element
+- The `attributes` property is an object mapping each attribute name to its value
+- The `children` property is an array that can contain strings and other elements
 
-const xml = fs.readFileSync('hello.xml', { encoding: 'utf-8' });
-const document = docutils.parse(xml);
-
-console.log(document.tag);
-// Output: 'document'
-```
-
-Note that the `parse()` function will throw an error if the input string isn't valid xml.
+Remember to catch parsing errors where appropriate.
 
 ```js
 try {
@@ -80,28 +82,38 @@ try {
 }
 ```
 
-## Plugins
+#### Plugins
 
-The parser lets you hook into the resulting element tree by using plugins. Plugins are simply functions that take the parser instance as parameter. The `parse()` function lets you specify an array of plugins as a second argument.
+The second argument of the `docutils.parse()` function is an optional array of plugins. Plugins are simply functions that take an instance of `docutils.DocumentParser` as parameter.
 
 ```js
-const uppercaseTitle = parser => {
+const titleToUppercase = parser => {
   parser.on('element:title', element => {
     element.children[0] = element.children[0].toUpperCase();
   });
 };
 
-const document = docutils.parse(xml, [uppercaseTitle]);
+const document = docutils.parse(string, [titleToUppercase]);
+
 console.log(document.children[0].children[0]);
 // Output: { tag: 'title', attributes: {}, children: [ 'HELLO, WORLD!' ] }
 ```
 
-The parser is an instance of `docutils.DocumentParser` and inherits from the nodejs [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter). Here are the events emitted by the parser:
+### docutils.DocumentParser({ plugins = [] } = {})
+
+While you should probably always use the `docutils.parse()` function directly, instantiating the parser yourself is also possible.
+
+```js
+const parser = new docutils.DocumentParser();
+const document = parser.parse(string);
+```
+
+Most of the time, you'll only interact with the parser through plugins. The `docutils.DocumentParser` class inherits from the nodejs [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter) and lets you hook into various stages of the parsing process.
 
 Event              | Arguments   | Description
 ------------------ | ----------- | ----------------------------------------------
-`document:start`   |             | Emitted before parsing the document
-`document:end`     | `document`  | Emitted after parsing the document
+`document:start`   |             | Emitted before parsing a document
+`document:end`     | `document`  | Emitted after parsing a document
 `element:TAG_NAME` | `element`   | Emitted after parsing a `TAG_NAME` element
 
 ## Contributing
