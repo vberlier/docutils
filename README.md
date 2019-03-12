@@ -87,13 +87,13 @@ try {
 The second argument of the `docutils.parse()` function is an optional array of plugins. Plugins are simply functions that take an instance of `docutils.DocumentParser` as parameter.
 
 ```js
-const titleToUppercase = parser => {
+const titleToUpperCase = parser => {
   parser.on('element:title', element => {
     element.children[0] = element.children[0].toUpperCase();
   });
 };
 
-const document = docutils.parse(string, [titleToUppercase]);
+const document = docutils.parse(string, [titleToUpperCase]);
 
 console.log(document.children[0].children[0]);
 // Output: { tag: 'title', attributes: {}, children: [ 'HELLO, WORLD!' ] }
