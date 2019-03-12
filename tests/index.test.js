@@ -99,6 +99,19 @@ describe('parser events', () => {
     expect(callback).toBeCalled()
   })
 
+  test('element', () => {
+    const visits = ['document', 'section', 'paragraph', 'title']
+
+    const callback = jest.fn(element => {
+      expect(element.tag).toEqual(visits.pop())
+    })
+
+    parser.on('element', callback).parse(basicDoc)
+
+    expect(callback).toBeCalled()
+    expect(visits).toEqual([])
+  })
+
   test('element:not_present_in_document', () => {
     const callback = jest.fn()
 

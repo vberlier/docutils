@@ -87,6 +87,7 @@ class DocumentParser extends EventEmitter {
       this.preserveSpace = null
     }
 
+    this.emit('element', element)
     this.emit('element:' + element.tag, element)
   }
 

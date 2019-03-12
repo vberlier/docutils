@@ -114,6 +114,7 @@ Event              | Arguments   | Description
 ------------------ | ----------- | ----------------------------------------------
 `document:start`   |             | Emitted before parsing a document
 `document:end`     | `document`  | Emitted after parsing a document
+`element`          | `element`   | Emitted after parsing an element
 `element:TAG_NAME` | `element`   | Emitted after parsing a `TAG_NAME` element
 
 ## Contributing
