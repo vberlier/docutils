@@ -6,6 +6,7 @@ const longDoc = require('./documents/index.xml')
 describe('parser', () => {
   test('basic document', () => {
     const result = docutils.parse(basicDoc)
+
     expect(result).toEqual({
       tag: 'document',
       attributes: {
@@ -16,22 +17,18 @@ describe('parser', () => {
           tag: 'section',
           attributes: {
             ids: 'hello-world',
-            names: 'hello,\\ world!'
+            names: 'hello, world!'
           },
           children: [
             {
               tag: 'title',
               attributes: {},
-              children: [
-                'Hello, world!'
-              ]
+              children: ['Hello, world!']
             },
             {
               tag: 'paragraph',
               attributes: {},
-              children: [
-                'This file is empty.'
-              ]
+              children: ['This file is empty.']
             }
           ]
         }

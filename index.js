@@ -9,6 +9,12 @@ function emptyNode (tag) {
   }
 }
 
+function decodeAttribute (value) {
+  value = value.replace(/\\ /g, ' ')
+
+  return value
+}
+
 class DocumentParser extends EventEmitter {
   constructor ({ plugins = [] } = {}) {
     super()
@@ -75,7 +81,7 @@ class DocumentParser extends EventEmitter {
           }
         }
       } else {
-        element.attributes[key] = value
+        element.attributes[key] = decodeAttribute(value)
       }
     }
   }

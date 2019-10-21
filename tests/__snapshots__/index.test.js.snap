@@ -17,7 +17,7 @@ transforms to after the document title, subtitle, and docinfo.",
     Object {
       "attributes": Object {
         "ids": "restructuredtext-demonstration",
-        "names": "restructuredtext\\\\ demonstration",
+        "names": "restructuredtext demonstration",
       },
       "children": Array [
         Object {
@@ -50,7 +50,7 @@ They are transformed from section titles after parsing.",
         Object {
           "attributes": Object {
             "ids": "examples-of-syntax-constructs",
-            "names": "examples\\\\ of\\\\ syntax\\\\ constructs",
+            "names": "examples of syntax constructs",
           },
           "children": Array [
             Object {
@@ -541,7 +541,7 @@ They are transformed from section titles after parsing.",
               "attributes": Object {
                 "classes": "contents",
                 "ids": "table-of-contents",
-                "names": "table\\\\ of\\\\ contents",
+                "names": "table of contents",
               },
               "children": Array [
                 Object {
@@ -1675,7 +1675,7 @@ They are transformed from section titles after parsing.",
             Object {
               "attributes": Object {
                 "ids": "structural-elements",
-                "names": "structural\\\\ elements",
+                "names": "structural elements",
               },
               "children": Array [
                 Object {
@@ -1700,7 +1700,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "section-title",
-                    "names": "section\\\\ title",
+                    "names": "section title",
                   },
                   "children": Array [
                     Object {
@@ -1785,7 +1785,7 @@ They are transformed from section titles after parsing.",
             Object {
               "attributes": Object {
                 "ids": "body-elements",
-                "names": "body\\\\ elements",
+                "names": "body elements",
               },
               "children": Array [
                 Object {
@@ -1842,7 +1842,7 @@ They are transformed from section titles after parsing.",
                     Object {
                       "attributes": Object {
                         "ids": "inline-markup",
-                        "names": "inline\\\\ markup",
+                        "names": "inline markup",
                       },
                       "children": Array [
                         Object {
@@ -2023,7 +2023,7 @@ They are transformed from section titles after parsing.",
                             Object {
                               "attributes": Object {
                                 "ids": "inline-hyperlink-targets",
-                                "names": "inline\\\\ hyperlink\\\\ targets",
+                                "names": "inline hyperlink targets",
                               },
                               "children": Array [
                                 "inline hyperlink targets",
@@ -2092,7 +2092,7 @@ They are transformed from section titles after parsing.",
                             ". Here are some explicit interpreted text roles: a PEP reference (",
                             Object {
                               "attributes": Object {
-                                "entries": "['single',\\\\ 'Python\\\\ Enhancement\\\\ Proposals;\\\\ PEP\\\\ 287',\\\\ 'index-0',\\\\ '',\\\\ None]",
+                                "entries": "['single', 'Python Enhancement Proposals; PEP 287', 'index-0', '', None]",
                               },
                               "children": Array [],
                               "tag": "index",
@@ -2124,7 +2124,7 @@ They are transformed from section titles after parsing.",
                             "); an RFC reference (",
                             Object {
                               "attributes": Object {
-                                "entries": "['single',\\\\ 'RFC;\\\\ RFC\\\\ 2822',\\\\ 'index-1',\\\\ '',\\\\ None]",
+                                "entries": "['single', 'RFC; RFC 2822', 'index-1', '', None]",
                               },
                               "children": Array [],
                               "tag": "index",
@@ -2240,7 +2240,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "bullet-lists",
-                    "names": "bullet\\\\ lists",
+                    "names": "bullet lists",
                   },
                   "children": Array [
                     Object {
@@ -2424,7 +2424,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "enumerated-lists",
-                    "names": "enumerated\\\\ lists",
+                    "names": "enumerated lists",
                   },
                   "children": Array [
                     Object {
@@ -2704,7 +2704,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "definition-lists",
-                    "names": "definition\\\\ lists",
+                    "names": "definition lists",
                   },
                   "children": Array [
                     Object {
@@ -2830,7 +2830,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "field-lists",
-                    "names": "field\\\\ lists",
+                    "names": "field lists",
                   },
                   "children": Array [
                     Object {
@@ -2923,7 +2923,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "option-lists",
-                    "names": "option\\\\ lists",
+                    "names": "option lists",
                   },
                   "children": Array [
                     Object {
@@ -3430,7 +3430,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "literal-blocks",
-                    "names": "literal\\\\ blocks",
+                    "names": "literal blocks",
                   },
                   "children": Array [
                     Object {
@@ -3507,7 +3507,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "line-blocks",
-                    "names": "line\\\\ blocks",
+                    "names": "line blocks",
                   },
                   "children": Array [
                     Object {
@@ -3762,7 +3762,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "block-quotes",
-                    "names": "block\\\\ quotes",
+                    "names": "block quotes",
                   },
                   "children": Array [
                     Object {
@@ -3817,7 +3817,7 @@ They are transformed from section titles after parsing.",
                 Object {
                   "attributes": Object {
                     "ids": "doctest-blocks",
-                    "names": "doctest\\\\ blocks",
+                    "names": "doctest blocks",
                   },
                   "children": Array [
                     Object {
@@ -5063,7 +5063,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     },
                     Object {
                       "attributes": Object {
-                        "dupnames": "duplicate\\\\ target\\\\ names",
+                        "dupnames": "duplicate target names",
                         "ids": "duplicate-target-names",
                       },
                       "children": Array [
@@ -5098,7 +5098,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     },
                     Object {
                       "attributes": Object {
-                        "dupnames": "duplicate\\\\ target\\\\ names",
+                        "dupnames": "duplicate target names",
                         "ids": "id18",
                       },
                       "children": Array [
@@ -5425,7 +5425,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     Object {
                       "attributes": Object {
                         "ids": "document-parts",
-                        "names": "document\\\\ parts",
+                        "names": "document parts",
                       },
                       "children": Array [
                         Object {
@@ -5928,7 +5928,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     Object {
                       "attributes": Object {
                         "ids": "topics-sidebars-and-rubrics",
-                        "names": "topics,\\\\ sidebars,\\\\ and\\\\ rubrics",
+                        "names": "topics, sidebars, and rubrics",
                       },
                       "children": Array [
                         Object {
@@ -6024,7 +6024,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     Object {
                       "attributes": Object {
                         "ids": "target-footnotes",
-                        "names": "target\\\\ footnotes",
+                        "names": "target footnotes",
                       },
                       "children": Array [
                         Object {
@@ -6052,7 +6052,7 @@ Python-specific usage examples; begun with \\">>>\\"
                             "backrefs": "id25 id26 id27",
                             "docname": "index",
                             "ids": "id24",
-                            "names": "TARGET_NOTE:\\\\ id24",
+                            "names": "TARGET_NOTE: id24",
                           },
                           "children": Array [
                             Object {
@@ -6086,7 +6086,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     Object {
                       "attributes": Object {
                         "ids": "replacement-text",
-                        "names": "replacement\\\\ text",
+                        "names": "replacement text",
                       },
                       "children": Array [
                         Object {
@@ -6151,7 +6151,7 @@ Python-specific usage examples; begun with \\">>>\\"
                     Object {
                       "attributes": Object {
                         "ids": "compound-paragraph",
-                        "names": "compound\\\\ paragraph",
+                        "names": "compound paragraph",
                       },
                       "children": Array [
                         Object {
@@ -6238,7 +6238,7 @@ Disconnecting... OK",
                 Object {
                   "attributes": Object {
                     "ids": "substitution-definitions",
-                    "names": "substitution\\\\ definitions",
+                    "names": "substitution definitions",
                   },
                   "children": Array [
                     Object {
@@ -6346,7 +6346,7 @@ Double-dashes -- \\"--\\" -- must be escaped somehow in HTML output.",
             Object {
               "attributes": Object {
                 "ids": "error-handling",
-                "names": "error\\\\ handling",
+                "names": "error handling",
               },
               "children": Array [
                 Object {
