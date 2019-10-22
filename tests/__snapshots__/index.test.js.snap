@@ -2092,7 +2092,13 @@ They are transformed from section titles after parsing.",
                             ". Here are some explicit interpreted text roles: a PEP reference (",
                             Object {
                               "attributes": Object {
-                                "entries": "['single', 'Python Enhancement Proposals; PEP 287', 'index-0', '', None]",
+                                "entries": Array [
+                                  "single",
+                                  "Python Enhancement Proposals; PEP 287",
+                                  "index-0",
+                                  "",
+                                  null,
+                                ],
                               },
                               "children": Array [],
                               "tag": "index",
@@ -2124,7 +2130,13 @@ They are transformed from section titles after parsing.",
                             "); an RFC reference (",
                             Object {
                               "attributes": Object {
-                                "entries": "['single', 'RFC; RFC 2822', 'index-1', '', None]",
+                                "entries": Array [
+                                  "single",
+                                  "RFC; RFC 2822",
+                                  "index-1",
+                                  "",
+                                  null,
+                                ],
                               },
                               "children": Array [],
                               "tag": "index",

@@ -1,7 +1,8 @@
-const docutils = require('../index')
+const docutils = require('../lib/index')
 
 const basicDoc = require('./documents/hello.xml')
 const longDoc = require('./documents/index.xml')
+const listAttrsDoc = require('./documents/listAttrs.xml')
 
 describe('parser', () => {
   test('basic document', () => {
@@ -43,6 +44,24 @@ describe('parser', () => {
 
   test('invalid document', () => {
     expect(() => docutils.parse('invalid xml')).toThrow()
+  })
+
+  test('list attributes', () => {
+    const result = docutils.parse(listAttrsDoc)
+
+    expect(result.children[0].children[1].children[0]).toEqual({
+      tag: 'index',
+      attributes: {
+        entries: [
+          'single',
+          'Python Enhancement Proposals; PEP 287',
+          'index-0',
+          '',
+          null
+        ]
+      },
+      children: []
+    })
   })
 })
 

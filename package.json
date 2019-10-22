@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/vberlier/docutils-parser/issues"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
@@ -39,6 +39,6 @@
     "libxmljs": "^0.19.7"
   },
   "files": [
-    "index.js"
+    "lib/*.js"
   ]
 }
