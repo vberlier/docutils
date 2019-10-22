@@ -49,7 +49,7 @@ Let's take a look at what the function returned in the previous example.
       tag: 'section',
       attributes: {
         ids: 'hello-world',
-        names: 'hello,\\ world!'
+        names: 'hello, world!'
       },
       children: [
         {
@@ -110,12 +110,12 @@ const document = parser.parse(string)
 
 Most of the time, you'll only interact with the parser through plugins. The `docutils.DocumentParser` class inherits from the nodejs [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter) and lets you hook into various stages of the parsing process.
 
-Event              | Arguments   | Description
------------------- | ----------- | ----------------------------------------------
-`document:start`   |             | Emitted before parsing a document
-`document:end`     | `document`  | Emitted after parsing a document
-`element`          | `element`   | Emitted after parsing an element
-`element:TAG_NAME` | `element`   | Emitted after parsing a `TAG_NAME` element
+| Event              | Arguments  | Description                                |
+| ------------------ | ---------- | ------------------------------------------ |
+| `document:start`   |            | Emitted before parsing a document          |
+| `document:end`     | `document` | Emitted after parsing a document           |
+| `element`          | `element`  | Emitted after parsing an element           |
+| `element:TAG_NAME` | `element`  | Emitted after parsing a `TAG_NAME` element |
 
 ## Contributing
 
