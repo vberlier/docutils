@@ -3,6 +3,7 @@ const docutils = require('../lib/index')
 const basicDoc = require('./documents/hello.xml')
 const longDoc = require('./documents/index.xml')
 const listAttrsDoc = require('./documents/listAttrs.xml')
+const spacesDoc = require('./documents/spaces.xml')
 
 describe('parser', () => {
   test('basic document', () => {
@@ -30,6 +31,46 @@ describe('parser', () => {
               tag: 'paragraph',
               attributes: {},
               children: ['This file is empty.']
+            }
+          ]
+        }
+      ]
+    })
+  })
+
+  test('document with spaces', () => {
+    const result = docutils.parse(spacesDoc)
+
+    expect(result).toEqual({
+      tag: 'document',
+      attributes: {
+        source: '.../spaces.rst'
+      },
+      children: [
+        {
+          tag: 'section',
+          attributes: {
+            ids: 'spaces',
+            names: 'spaces'
+          },
+          children: [
+            {
+              tag: 'title',
+              attributes: {},
+              children: ['spaces']
+            },
+            {
+              tag: 'paragraph',
+              attributes: {},
+              children: [
+                'This is a sentence with ',
+                {
+                  tag: 'strong',
+                  attributes: {},
+                  children: ['significant']
+                },
+                ' whitespace.'
+              ]
             }
           ]
         }
