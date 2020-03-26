@@ -1,5 +1,5 @@
 {
-  "name": "docutils-parser",
+  "name": "docutils",
   "version": "1.0.0",
   "description": "Simple javascript parser for docutils xml documents",
   "author": "Valentin Berlier <berlier.v@gmail.com>",
@@ -11,13 +11,13 @@
     "parser",
     "sphinx"
   ],
-  "homepage": "https://github.com/vberlier/docutils-parser#readme",
+  "homepage": "https://github.com/vberlier/docutils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vberlier/docutils-parser.git"
+    "url": "git+https://github.com/vberlier/docutils.git"
   },
   "bugs": {
-    "url": "https://github.com/vberlier/docutils-parser/issues"
+    "url": "https://github.com/vberlier/docutils/issues"
   },
   "main": "lib/index.js",
   "scripts": {
