@@ -138,7 +138,7 @@ describe('parser events', () => {
 
   test('document:start', () => {
     const callback = jest.fn(() => {
-      expect(parser.root.children.length).toEqual(0)
+      expect(parser.stack[0].children.length).toEqual(0)
     })
 
     parser.on('document:start', callback).parse(basicDoc)
@@ -148,7 +148,8 @@ describe('parser events', () => {
 
   test('document:end', () => {
     const callback = jest.fn(document => {
-      expect(document).toBe(parser.root.children[0])
+      expect(parser.stack).toEqual([])
+      expect(document).toBe(parser.document)
     })
 
     parser.on('document:end', callback).parse(basicDoc)
@@ -179,7 +180,7 @@ describe('parser events', () => {
 
   test('element:title', () => {
     const callback = jest.fn(element => {
-      expect(element).toBe(parser.root.children[0].children[0].children[0])
+      expect(element).toBe(parser.stack[0].children[0].children[0].children[0])
     })
 
     parser.on('element:title', callback).parse(basicDoc)
